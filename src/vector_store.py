@@ -27,7 +27,7 @@ class VectorStoreBuilder():
         splitter = CharacterTextSplitter(chunk_size = 1000, chunk_overlap=0)
         texts = splitter.split_documents(data)
 
-        db = Chroma.from_documents(texts, self.embedding, perist_directory = self.persist_dir)
+        db = Chroma.from_documents(texts, self.embedding, persist_directory = self.persist_dir)
         db.persist()
 
     
