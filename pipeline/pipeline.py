@@ -18,7 +18,7 @@ class AnimeRecommendationPipeline:
 
             retriever = vector_builder.load_vector_store().as_retriever()
 
-            self.recommender = AnimeRecommendationPipeline(retriever, GROQ_API_KEY, MODEL_NAME)
+            self.recommender = AnimeRecommender(retriever, GROQ_API_KEY, MODEL_NAME)
 
             logger.info("pipeline initialized successfully")
 

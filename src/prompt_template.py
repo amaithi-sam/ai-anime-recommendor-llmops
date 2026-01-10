@@ -19,7 +19,7 @@ Context:
 {context}
 
 User's question:
-{question}
+{input}
 
 Your well-structured response:
 """
