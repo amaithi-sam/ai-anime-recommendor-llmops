@@ -15,7 +15,8 @@ dependencies = [
     "langchain-community (>=0.4.1,<0.5.0)",
     "pandas (>=2.3.3,<3.0.0)",
     "chromadb (>=1.4.0,<2.0.0)",
-    "langchain-huggingface (>=1.2.0,<2.0.0)"
+    "langchain-huggingface (>=1.2.0,<2.0.0)",
+    "sentence-transformers (>=5.2.0,<6.0.0)"
 ]
 
 

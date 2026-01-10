@@ -20,6 +20,6 @@ class AnimeDataLoader():
 
 
         df[['combined_info']].to_csv(self.processed_csv_path, index=False, encoding = 'utf-8')
-        
 
-        
+
+        return self.processed_csv_path
