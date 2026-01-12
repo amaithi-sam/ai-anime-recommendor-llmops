@@ -12,7 +12,8 @@ class VectorStoreBuilder():
     def __init__(self, csv_path:str, persis_dir:str="chroma_db"):
         self.csv_path = csv_path 
         self.persist_dir = persis_dir
-        self.embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        self.embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2",
+                                               model_kwargs={'device': 'cpu'})
 
 
     def build_and_save_vectorstore(self):
