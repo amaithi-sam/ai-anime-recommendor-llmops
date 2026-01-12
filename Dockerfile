@@ -7,8 +7,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     POETRY_VERSION=2.0.1 \
     POETRY_VIRTUALENVS_CREATE=false \
-    POETRY_NO_INTERACTION=1 \
-    POETRY_CACHE_DIR='/tmp/poetry_cache'
+    POETRY_NO_INTERACTION=1 
+# POETRY_CACHE_DIR='/tmp/poetry_cache'
 
 # 3. Work Directory
 WORKDIR /app
@@ -19,7 +19,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
-    libgomp1 \
+    # libgomp1 \
     sqlite3 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -33,7 +33,8 @@ COPY pyproject.toml poetry.lock* ./
 
 # 7. Install Dependencies
 # Poetry 2.0 automatically reads the [project] table you provided.
-RUN poetry install --only main --no-root && rm -rf $POETRY_CACHE_DIR
+# RUN poetry install --only main --no-root && rm -rf $POETRY_CACHE_DIR
+RUN poetry install --only main --no-root --no-cache
 
 # 8. Copy Application Source Code
 # Done after installation so small code changes don't trigger re-installs.
